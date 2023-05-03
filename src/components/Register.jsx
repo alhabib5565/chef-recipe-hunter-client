@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import google from '../assets/google-btn.png'
+import github from '../assets/github-btn.png'
 const Register = () => {
+    const creatUser = (event) => {
+        event.preventDefault()
+        const form = event.target 
+        const email = form.email.value 
+        const password = form.password.value 
+        console.log(email, password) 
+    }
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col">
@@ -9,7 +17,7 @@ const Register = () => {
                     <h1 className="text-4xl font-bold">Register now!</h1>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form className="card-body">
+                    <form onSubmit={creatUser} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
