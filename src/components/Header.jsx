@@ -21,7 +21,7 @@ const Header = () => {
     <header className='bg-white'>
       <nav className='flex justify-between items-center h-20 w-[90%] mx-auto'>
         <div>
-          <h1 className='text-3xl text-stone-700 md:text-5xl font-extrabold'>Navbar</h1>
+          <Link to='/' className='text-3xl text-sky-500 md:text-5xl font-extrabold'>Khan <span className='text-orange-500'>Pina</span></Link>
         </div>
         <div className={`duration-500 md:static absolute bg-white left-0 min-h-[50vh] md:min-h-fit w-full md:w-auto flex items-center px-6  ${show ? "top-[-100%]" : "top-[10%]"}`}>
           <ul className='flex md:center md:flex-row flex-col md:items-center md:gap-[4vw] gap-6'>
