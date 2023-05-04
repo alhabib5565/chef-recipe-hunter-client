@@ -15,7 +15,7 @@ const Achef = ({ chef }) => {
                     <><span className='font-semibold'>Likes: </span> {likes}</>                    
                 </div>
                 <div className="card-actions justify-end">
-                    <Link to={`chef/${chef_id}`}><button className="btn btn-primary">veiw recipes</button></Link>
+                    <Link to={`chef/${chef_id}`}><button className=' bg-sky-500 px-5 py-2 rounded-full text-white text-xl font-semibold hover:bg-sky-700'>veiw recipes</button></Link>
                 </div>
             </div>
         </div>

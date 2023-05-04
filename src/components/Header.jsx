@@ -18,19 +18,19 @@ const Header = () => {
       })
   }
   return (
-    <header className='bg-white'>
+    <header className=' bg-slate-100'>
       <nav className='flex justify-between items-center h-20 w-[90%] mx-auto'>
         <div>
-          <Link to='/' className='text-3xl text-sky-500 md:text-5xl font-extrabold'>Khan <span className='text-orange-500'>Pina</span></Link>
+          <Link to='/' className='text-3xl text-sky-500 md:text-5xl font-extrabold'>Khana <span className='text-orange-500'>Pina</span></Link>
         </div>
-        <div className={`duration-500 md:static absolute bg-white left-0 min-h-[50vh] md:min-h-fit w-full md:w-auto flex items-center px-6  ${show ? "top-[-100%]" : "top-[10%]"}`}>
+        <div className={`duration-500 md:static absolute left-0 min-h-[50vh] md:min-h-fit w-full md:w-auto flex items-center px-6  ${show ? "top-[-100%]" : "top-[10%]"}`}>
           <ul className='flex md:center md:flex-row flex-col md:items-center md:gap-[4vw] gap-6'>
-            <li>
+            <li className='hover:text-blue-700'>
               <NavLink
                 to='/'
                 className={({ isActive, isPending }) =>
                   isActive
-                    ? "text-blue-800"
+                    ? "text-blue-500"
                     : isPending
                       ? "pending"
                       : ""
@@ -39,12 +39,12 @@ const Header = () => {
                 Home
               </NavLink>
             </li>
-            <li>
+            <li className='hover:text-blue-700'>
               <NavLink
                 to='/blog'
                 className={({ isActive, isPending }) =>
                   isActive
-                    ? "text-blue-800"
+                    ? "text-blue-500"
                     : isPending
                       ? "pending"
                       : ""
@@ -53,12 +53,12 @@ const Header = () => {
                 Blog
               </NavLink>
             </li>
-            <li>
+            <li className='hover:text-blue-700'>
               <NavLink
                 to='/login'
                 className={({ isActive, isPending }) =>
                   isActive
-                    ? "text-blue-800"
+                    ? "text-blue-500"
                     : isPending
                       ? "pending"
                       : ""
@@ -67,12 +67,12 @@ const Header = () => {
                 Login
               </NavLink>
             </li>
-            <li>
+            <li className='hover:text-blue-700'>
               <NavLink
                 to='/register'
                 className={({ isActive, isPending }) =>
                   isActive
-                    ? "text-blue-800"
+                    ? "text-blue-500"
                     : isPending
                       ? "pending"
                       : ""

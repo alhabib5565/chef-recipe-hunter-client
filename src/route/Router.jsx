@@ -8,12 +8,14 @@ import ChefLayout from "../layout/ChefLayout";
 import AllChef from "../components/AllChef";
 import ChefDeatails from "../components/ChefDeatails";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import ErrorPage from "../components/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Layout></Layout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
