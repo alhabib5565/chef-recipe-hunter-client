@@ -1,17 +1,21 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../authProvider/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
+import { Circles } from 'react-loader-spinner';
 
 const PrivateRoute = ({ children }) => {
     const { loading, user } = useContext(AuthContext)
     let location = useLocation()
     if (loading) {
-        return <button type="button" class="bg-indigo-500 ..." disabled>
-            <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-
-            </svg>
-            Processing...
-        </button>
+        return <Circles
+        height="80"
+        width="80"
+        color="#4fa94d"
+        ariaLabel="circles-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+      />
     }
     if (user) {
         return children
