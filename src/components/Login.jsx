@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../assets/google-btn.png'
 import github from '../assets/github-btn.png'
 import { AuthContext } from '../authProvider/AuthProvider';
@@ -7,6 +7,9 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import toast, { Toaster } from 'react-hot-toast';
 const Login = () => {
     let [err, setError] = useState('')
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || "/";
 
     const { googleLogin, githubLogin, loginUser} = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider()
@@ -23,6 +26,7 @@ const Login = () => {
         .then(result => {
             console.log(result.user)
             toast.success('User Login successfull')
+            navigate(from, { replace: true });
         })
         .catch(error => {
             setError(error.message)
@@ -37,6 +41,7 @@ const Login = () => {
                 const loggedInUser = result.user
                 console.log(loggedInUser)
                 toast.success('Google Login Successfull')
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 console.log(err)
@@ -50,6 +55,7 @@ const Login = () => {
                 const loggedInUser = result.user
                 console.log(loggedInUser)
                 toast.success('Gtihub Login Successfull')
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 console.log(err)

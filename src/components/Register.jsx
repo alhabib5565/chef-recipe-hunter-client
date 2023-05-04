@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import google from '../assets/google-btn.png'
 import github from '../assets/github-btn.png'
 import { AuthContext } from '../authProvider/AuthProvider';
@@ -9,7 +9,7 @@ import { updateProfile } from 'firebase/auth';
 const Register = () => {
     let [err, setError] = useState('')
     let {userCreate} = useContext(AuthContext)
-
+    const navigate = useNavigate()
     const creatUser = (event) => {
         event.preventDefault()
         const form = event.target 
@@ -30,6 +30,7 @@ const Register = () => {
             console.log(loggedInUser)
             setError('')
             toast.success('Create User Successfull')
+            navigate('/login')
             updateProfile(result.user, {displayName:name, photoURL: photo})
             .then(() => {
                 toast.success('updated profile')

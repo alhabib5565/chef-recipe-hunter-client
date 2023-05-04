@@ -7,6 +7,7 @@ import Blog from "../components/Blog";
 import ChefLayout from "../layout/ChefLayout";
 import AllChef from "../components/AllChef";
 import ChefDeatails from "../components/ChefDeatails";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'chef/:id',
-                element: <ChefDeatails></ChefDeatails>,
+                element: <PrivateRoute><ChefDeatails></ChefDeatails></PrivateRoute>,
                 loader: ({params}) => fetch(`https://assignment10-server-alhabib5565.vercel.app/alldata/${params.id}`)
             }
         ]

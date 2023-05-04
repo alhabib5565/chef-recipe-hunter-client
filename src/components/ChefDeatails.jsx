@@ -19,7 +19,8 @@ const ChefDeatails = () => {
                     </div>
                 </div>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-3 max-w-5xl mx-auto mt-10 md:mt-16 p-5 md:p-10 rounded gap-5 border-2 border-sky-700'>
+            <h2 className='text-center text-3xl mt-10 md:mt-16 font-semibold text-gray-700'>All Recipes</h2>
+            <div className='grid grid-cols-1 lg:grid-cols-3 max-w-5xl mx-auto mt-10 md:mt-5 rounded gap-5'>
                 
                 {
                     recipes.map((recipe, index) => <Recipeinfo key={index} recipe={recipe}></Recipeinfo>)
