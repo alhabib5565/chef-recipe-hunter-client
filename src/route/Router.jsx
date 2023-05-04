@@ -6,6 +6,7 @@ import Register from "../components/Register";
 import Blog from "../components/Blog";
 import ChefLayout from "../layout/ChefLayout";
 import AllChef from "../components/AllChef";
+import ChefDeatails from "../components/ChefDeatails";
 
 
 const router = createBrowserRouter([
@@ -30,12 +31,16 @@ const router = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
-                path: 'chef',
-                element: <AllChef></AllChef>,
-                loader: () => fetch(`https://assignment10-server-alhabib5565.vercel.app/alldata`)
+                path: 'chef/:id',
+                element: <ChefDeatails></ChefDeatails>,
+                loader: ({params}) => fetch(`https://assignment10-server-alhabib5565.vercel.app/alldata/${params.id}`)
             }
         ]
-    }
+    },
 ])
 
 export default router
+
+
+
+
