@@ -9,10 +9,10 @@ const ChefDeatails = () => {
         <>
             <div className="card lg:card-side bg-base-200 max-w-fit lg:max-w-5xl mx-auto mt-10 md:mt-20 shadow-lg">
                 <figure className='lg:w-2/4'><img src={chef_picture} alt="Album" /></figure>
-                <div className="card-body lg:w-2/4 relative">
+                <div className="card-body lg:w-2/4">
                     <h2 className="card-title">{chef_name}</h2>
                     <p>{chef_bio}</p>
-                    <div className='flex flex-col md:flex-row justify-between md:absolute md:top-32'>
+                    <div className='flex flex-col md:flex-row justify-between'>
                         <p><span className='font-semibold'>Experience: </span> {experience}</p>
                         <p><span className='font-semibold'>Recipes: </span> {numberOfRecipes}</p>
                         <p><span className='font-semibold'>Likes: </span> {likes}</p>
