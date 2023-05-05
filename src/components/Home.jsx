@@ -6,7 +6,7 @@ const Home = () => {
         <>
             <div style={{ backgroundImage: `url(${benner})` }} className='h-72 md:h-96 '>
                 <div className='bg-black bg-opacity-30 h-full w-full flex items-center justify-center '>
-                    <h1 className='text-5xl text-slate-300 font-bold'>It's all about good <br /> <span className=' text-sky-500 text-6xl'>food</span></h1>
+                    <h1 className='text-3xl md:text-5xl text-slate-300 font-bold'>It's all about good <br /> <span className=' text-sky-500 text-6xl'>food</span></h1>
                 </div>
             </div>
             <AllChef></AllChef>

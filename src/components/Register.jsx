@@ -17,7 +17,7 @@ const Register = () => {
         const password = form.password.value 
         const name = form.name.value 
         const photo = form.photo.value 
-        console.log(email, password, photo, name) 
+        // console.log(email, password, photo, name) 
 
         setError('')
         if (password.length < 6) {
@@ -27,7 +27,7 @@ const Register = () => {
         userCreate(email, password)
         .then(result => {
             const loggedInUser = result.user
-            console.log(loggedInUser)
+            // console.log(loggedInUser)
             setError('')
             toast.success('Create User Successfull')
             navigate('/login')

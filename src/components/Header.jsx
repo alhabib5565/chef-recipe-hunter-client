@@ -23,7 +23,7 @@ const Header = () => {
         <div>
           <Link to='/' className='text-3xl text-sky-500 md:text-5xl font-extrabold'>Khana <span className='text-orange-500'>Pina</span></Link>
         </div>
-        <div className={`duration-500 md:static absolute left-0 min-h-[50vh] md:min-h-fit w-full md:w-auto flex items-center px-6  ${show ? "top-[-100%]" : "top-[10%]"}`}>
+        <div className={`duration-500 md:static bg-slate-100 absolute left-0 min-h-[50vh] md:min-h-fit w-full md:w-auto flex items-center px-6  ${show ? "top-[-100%]" : "top-[10%]"}`}>
           <ul className='flex md:center md:flex-row flex-col md:items-center md:gap-[4vw] gap-6'>
             <li className='hover:text-blue-700'>
               <NavLink
@@ -82,10 +82,6 @@ const Header = () => {
               </NavLink>
             </li>
 
-          </ul>
-        </div>
-        <div className='flex gap-4 items-center'>
-
           {
             user ? <>
               <img className='w-14 h-14 rounded-full' title={user.displayName} src={user.photoURL} alt="" />
@@ -97,6 +93,10 @@ const Header = () => {
                 Login
               </button></Link>
           }
+          </ul>
+        </div>
+        <div className='flex gap-4 items-center'>
+
 
           {show ? <FaBars onClick={() => setShow(!show)} className='text-3xl cursor-pointer md:hidden'></FaBars> :
             <FaRegWindowClose onClick={() => setShow(!show)} className='text-3xl cursor-pointer md:hidden'></FaRegWindowClose>}
